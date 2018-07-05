@@ -3,8 +3,9 @@
 import sys
 import datetime
 
-from utils import emailutils
-from tools.redirect_log import RedirectLog
+
+from UtilsCell import emailutils
+from UtilsCell.tools import RedirectLog
 
 LOG_BUCKET = RedirectLog()
 

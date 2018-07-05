@@ -10,8 +10,6 @@ from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
 
 
-# from utils.config import mail_user, mail_server, mail_port, mail_pass
-
 
 def _format_addr(s):
     name, addr = parseaddr(s)
