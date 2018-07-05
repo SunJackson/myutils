@@ -18,25 +18,29 @@ class mailbox(object):
         self.email = self.next()[1:].split(":")[0]
         self.next()
 
+    def get_email(self):
+        self.box = mailbox()
+        print(self.box.email)
+        return self.box.email
 
-def main():
-    from json import loads
-    from datetime import datetime
-    box = mailbox()
-    print(box.email)
-
-    while True:
-        result = box.next()
-        print("Recieved following at {0}".format(datetime.now()))
-        text = loads(result[1:])
-        for key in text:
-            message = text[key].replace("\n", "").replace("\r", "").replace(" ", "")
-            print(key, message)
+    def get_email_message(self):
+        from json import loads
+        from datetime import datetime
+        result = self.box.next()
+        if result:
+            print("Recieved following at {0}".format(datetime.now()))
+            text = loads(result[1:])
+            for key in text:
+                message = text[key].replace("\n", "").replace("\r", "").replace(" ", "")
+                print(key, message)
+            return text
 
 
 if __name__ == '__main__':
     try:
+        box = mailbox()
+        box.get_email()
         while True:
-            main()
+            box.get_email_message()
     except KeyboardInterrupt:
         sys.exit(0)
