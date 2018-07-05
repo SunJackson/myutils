@@ -8,6 +8,11 @@ from tools.redirect_log import RedirectLog
 
 LOG_BUCKET = RedirectLog()
 
+mail_user = '***********@**.com'
+mail_pass = '***********'
+mail_server = 'smtp.**.com'
+mail_port = '443'
+
 
 class EmailDemo:
     def __init__(self, send_email=False, addrs=None):
@@ -25,11 +30,15 @@ class EmailDemo:
             sys.stdout = LOG_BUCKET
 
     def send_email_data(self):
-        print("email body")
+        print("demo email body")
 
     def email_send(self):
         if self.send_email:
             emailutils.send(
+                mail_user=mail_user,
+                mail_pass=mail_pass,
+                mail_server=mail_server,
+                mail_port=mail_port,
                 to_addr=self.to_addrs,
                 title=self.title,
                 mail_body=LOG_BUCKET.buff

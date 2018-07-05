@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-mail_user = '***********@**.com'
-mail_pass = '***********'
-mail_server = 'smtp.**.com'
-mail_port = '443'
 
 '''
 gmail(google.com)

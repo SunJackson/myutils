@@ -9,7 +9,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
 
-from utils.config import mail_user, mail_server, mail_port, mail_pass
+
+# from utils.config import mail_user, mail_server, mail_port, mail_pass
 
 
 def _format_addr(s):
@@ -24,7 +25,25 @@ def handle_attachment(abs_file):
     return part
 
 
-def send(to_addr, title, mail_body, attachments=None):
+def send(mail_user=None,
+         mail_pass=None,
+         mail_server='smtp.qq.com',
+         mail_port='465',
+         to_addr=None,
+         title=None,
+         mail_body=None,
+         attachments=None):
+    '''
+    :param mail_user:
+    :param mail_pass:
+    :param mail_server:
+    :param mail_port:
+    :param to_addr:
+    :param title:
+    :param mail_body:
+    :param attachments:
+    :return:
+    '''
     try:
         msg = MIMEMultipart()
 
