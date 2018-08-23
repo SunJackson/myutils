@@ -29,7 +29,7 @@ def send(mail_user=None,
          to_addr=None,
          title=None,
          mail_body=None,
-         attachments=None):
+         attachments_file_list=None):
     '''
     :param mail_user:
     :param mail_pass:
@@ -54,8 +54,8 @@ def send(mail_user=None,
                         _subtype='html', _charset='utf-8')
         msg.attach(body)
 
-        if attachments:
-            for abs_file_path in attachments:
+        if attachments_file_list:
+            for abs_file_path in attachments_file_list:
                 msg.attach(handle_attachment(abs_file_path))
 
         server = smtplib.SMTP_SSL(mail_server, mail_port)
