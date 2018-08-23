@@ -10,7 +10,6 @@ from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
 
 
-
 def _format_addr(s):
     name, addr = parseaddr(s)
     return formataddr((Header(name, 'utf-8').encode(), addr))
@@ -60,13 +59,11 @@ def send(mail_user=None,
                 msg.attach(handle_attachment(abs_file_path))
 
         server = smtplib.SMTP_SSL(mail_server, mail_port)
-        # server.starttls()
         # server.set_debuglevel(1)
 
         server.login(mail_user, mail_pass)
         server.sendmail(mail_user, to_addr, msg.as_string())
         server.quit()
-
         return dict(result=True)
     except Exception as e:
         return dict(result=False, details=e)
