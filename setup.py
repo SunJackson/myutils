@@ -15,7 +15,7 @@ __date__ = '2018/07/05'
 
 setup(
     name='UtilsCell',                                # 名称
-    version='0.0.1',                                 # 版本号
+    version='0.0.2',                                 # 版本号
     description='my UtilsCell',                      # 简单描述
     long_description=long_description,               # 详细描述
     classifiers=[
