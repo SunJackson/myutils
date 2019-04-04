@@ -98,3 +98,4 @@ ENV/
 metastore_db/
 saprk-warehouse/
 .log
+*test.py

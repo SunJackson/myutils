@@ -6,7 +6,7 @@ user, password and the command.
 """
 
 import pexpect
-import getpass, os, traceback
+import os, traceback
 
 
 # user: ssh 主机的用户名
