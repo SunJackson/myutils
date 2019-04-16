@@ -15,8 +15,8 @@ __date__ = '2018/07/05'
 
 setup(
     name='UtilsCell',                                # 名称
-    version='0.0.2',                                 # 版本号
-    description='my UtilsCell',                      # 简单描述
+    version='0.0.4',                                 # 版本号
+    description='一些常用工具',                      # 简单描述
     long_description=long_description,               # 详细描述
     classifiers=[
         'License :: OSI Approved :: MIT License',
@@ -32,7 +32,9 @@ setup(
     packages=find_packages(),                       # 包列表
     install_requires=[
         'pexpect',
-        'websocket'
+        'websocket',
+        'lxml',
+        'requests'
     ],
     include_package_data=True,
     zip_safe=True,

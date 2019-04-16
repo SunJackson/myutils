@@ -12,3 +12,9 @@ sshutils.py
 tenminutesemail.py
     注册临时邮箱
     监控邮件内容
+
+4、爬虫常用工具
+spiderutils.py
+    将浏览器请求头转换成字典
+    伪造userAgent
+    获取代理IP

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # https://github.com/liris/websocket-client
 ## sudo pip install --user websocket-client
 from websocket import create_connection
